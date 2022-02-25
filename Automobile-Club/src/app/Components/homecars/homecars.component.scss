@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+// [style]={ 'background-color': '#888', color: '#fff' }
+
+.columnDes{
+    background-color: '#888'; 
+    color: '#fff'
+}
+.grid-bg{
+    background-color: 'primary';
+}

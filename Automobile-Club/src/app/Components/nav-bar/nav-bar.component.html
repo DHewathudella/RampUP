@@ -1,0 +1,79 @@
+<div class="example-wrapper">
+   <input type="file" class="design" (change)="onChangeFile($event)">
+   
+    <button kendoButton class="button"  ><span class="k-icon k-i-export"></span> Export</button>
+    <button kendoButton class="button" *ngIf="!opened" (click)="open()" ><span class="k-icon k-i-plus"></span> Add</button>
+    
+    <kendo-window
+        title="Add New Vehicle"
+        *ngIf="opened"
+        (close)="close()"
+        [minWidth]="450"
+        [width]="1050"
+      >
+      <form class="k-form">
+         <fieldset>
+            <legend>Vehicle Details</legend>
+               <div class="row">
+                  <div class="col-xs-6">
+                     <label class="k-form-field">
+                        <span>First Name</span>
+                        <input kendoTextBox placeholder="First Name" />
+                     </label>
+                  </div>
+                  <div class="col-xs-6">
+                     <label class="k-form-field">
+                        <span>Last Name</span>
+                        <input kendoTextBox placeholder="Last Name" />
+                     </label>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-6">
+                     <label class="k-form-field">
+                        <span>Email</span>
+                        <input kendoTextBox placeholder="email" />
+                     </label>
+                  </div>
+                  <div class="col-xs-6">
+                     <label class="k-form-field">
+                        <span>Car Make</span>
+                        <input kendoTextBox placeholder="Car Make" />
+                     </label>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-6">
+                     <label class="k-form-field">
+                        <span>Car Model</span>
+                        <input kendoTextBox placeholder="Car Model" />
+                     </label>
+                  </div>
+                  <div class="col-xs-6">
+                     <label class="k-form-field">
+                        <span>Manufactured Date</span>
+                        <div class="example-wrapper" style="min-height: 100px">
+                           <kendo-datepicker calendarType="classic" [(value)]="exampleDate"></kendo-datepicker>
+                         </div>
+                     </label>
+                  </div>
+               </div>
+            
+         </fieldset>
+         <div class="k-actions k-actions-end">
+            <button kendoButton type="button" themeColor="secondary" (click)="close()">Cancel</button>
+            <button
+              kendoButton
+              themeColor="primary"
+              type="button"
+              (click)="submit()"
+            >
+              Add
+            </button>
+         </div>
+      </form>
+   </kendo-window>
+</div>
+
+   
+

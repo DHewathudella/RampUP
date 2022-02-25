@@ -1,0 +1,54 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+directive @key(fields: String!) on OBJECT | INTERFACE
+
+directive @extends on OBJECT | INTERFACE
+
+directive @external on OBJECT | FIELD_DEFINITION
+
+directive @requires(fields: String!) on FIELD_DEFINITION
+
+directive @provides(fields: String!) on FIELD_DEFINITION
+
+type Member {
+  id: ID!
+  cars: [Car!]!
+}
+
+type Car {
+  id: ID!
+  car_make: String!
+  car_model: String!
+  vin_number: String!
+  manufactured_date: String!
+  member: Member!
+  memberID: String!
+}
+
+type Query {
+  getAllCars: [Car!]!
+  car(id: String!): Car!
+}
+
+type Mutation {
+  createCar(createCarInput: CreateCarInput!): Car!
+  updateCar(updateCarInput: UpdateCarInput!): Car!
+  removeCar(id: String!): Car!
+}
+
+input CreateCarInput {
+  car_make: String!
+  car_model: String!
+  vin_number: String!
+  manufactured_date: String!
+}
+
+input UpdateCarInput {
+  car_make: String!
+  car_model: String!
+  vin_number: String!
+  manufactured_date: String!
+  id: String!
+}

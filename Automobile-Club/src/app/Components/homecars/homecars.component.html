@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <div *ngIf="cars" class="list-group">
+        <kendo-grid [data]="cars">
+            <kendo-grid-column field="firstName" title="First Name"></kendo-grid-column>
+            <kendo-grid-column field="lastName" title="Last Name"> </kendo-grid-column>
+            <kendo-grid-column field="email" title="Email"></kendo-grid-column>
+            <kendo-grid-column field="carMake" title="Car Make"> </kendo-grid-column>
+            <kendo-grid-column field="manufacturedDate" title="manufacturedDate"> </kendo-grid-column>
+            <kendo-grid-column field="car_model" title="Car model"></kendo-grid-column>
+            <kendo-grid-column field="ageOfVehicle" title="Age of Vehicle"> </kendo-grid-column>
+            <kendo-grid-column field="Update" >
+                <ng-template kendoGridCellTemplate>
+                    <button kendoButton icon="k-icon k-i-edit" [look]="'outline'" themeColor="primary"></button>
+                </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="Delete" icon="Update" >
+                <ng-template kendoGridCellTemplate>
+                    <button kendoButton icon="k-icon k-i-delete" [look]="'outline'" themeColor="secondary"></button>
+                </ng-template>
+            </kendo-grid-column>
+
+        </kendo-grid>
+    </div>
+</div>
+
+

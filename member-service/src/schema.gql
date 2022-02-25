@@ -1,0 +1,43 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+directive @key(fields: String!) on OBJECT | INTERFACE
+
+directive @extends on OBJECT | INTERFACE
+
+directive @external on OBJECT | FIELD_DEFINITION
+
+directive @requires(fields: String!) on FIELD_DEFINITION
+
+directive @provides(fields: String!) on FIELD_DEFINITION
+
+type Member {
+  id: ID!
+  first_name: String!
+  last_name: String!
+  email: String!
+}
+
+type Query {
+  getAllMembers: [Member!]!
+  member(id: String!): Member!
+}
+
+type Mutation {
+  createMember(memberInput: CreateMemberInput!): Member!
+  updateMember(member: UpdateMemberInput!): Member!
+}
+
+input CreateMemberInput {
+  first_name: String!
+  last_name: String!
+  email: String!
+}
+
+input UpdateMemberInput {
+  first_name: String!
+  last_name: String!
+  email: String!
+  id: String!
+}
